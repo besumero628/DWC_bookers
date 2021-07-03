@@ -34,6 +34,15 @@
 
 <!--新規投稿-->
 <h2>New Book</h2>
+<!--error message-->
+<% if @new_book.errors.any? %>
+  <div class = "error_message">Error!!</div>
+  <% @new_book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>
+
+<!--投稿form-->
 <%= form_with model:@book, local:true do |f| %>
   <div class = "field">
     <%= f.label :title, "title" %>
