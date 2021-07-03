@@ -1,0 +1,22 @@
+<h1>Editing Book</h1>
+
+<% if @book.errors.any? %>
+  <div class = "error_message">Error!!</div>
+  <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>
+
+<%= form_with model:@book, local:true do |f| %>
+  <div class = "field">
+    <%= f.label :title, "title" %>
+    <%= f.text_field :title, class: "book_title" %>
+  </div>
+  <div class = "field">
+    <%= f.label :body, "body" %>
+    <%= f.text_area :body, class: "book_text" %>
+  </div>
+  <div class = "actions">
+    <%= f.submit "Update Book" %>
+  </div>
+<% end %>
