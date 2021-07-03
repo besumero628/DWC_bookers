@@ -36,7 +36,7 @@
 <h2>New Book</h2>
 <!--error message-->
 <% if @new_book.errors.any? %>
-  <div class = "error_message">Error!!</div>
+  <div class = "error_message">error!!</div>
   <% @new_book.errors.full_messages.each do |message| %>
     <li><%= message %></li>
   <% end %>

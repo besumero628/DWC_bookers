@@ -1,7 +1,7 @@
 <h1>Editing Book</h1>
 
 <% if @book.errors.any? %>
-  <div class = "error_message">Error!!</div>
+  <div class = "error_message">error!!</div>
   <% @book.errors.full_messages.each do |message| %>
     <li><%= message %></li>
   <% end %>
@@ -20,3 +20,6 @@
     <%= f.submit "Update Book" %>
   </div>
 <% end %>
+
+<%= link_to "Show", book_path(@book.id) %> |
+<%= link_to "Back", books_path %>
